@@ -4,7 +4,7 @@
 
 ## Demo
 
-Demo：https://as60160.github.io/Lottery-Number-Generator/public/index.html
+Demo：https://as60160.github.io/Lottery-Number-Generator/public/
 
 ## 簡介
 
