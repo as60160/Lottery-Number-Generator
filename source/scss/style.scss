@@ -1,0 +1,236 @@
+$color_bgc: rgba(121, 202, 252, 0.589);
+$color_ball1: #3fc5f0;
+$color_ball2: #42dee1;
+$color_ball3: #baabda;
+$color_ball4: #eef5b2;
+$color_ball5: #d79abc;
+
+@mixin position($top:50%, $left:50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin border($bw:1px, $bc:rgba(0, 0, 0, 0.3)) {
+  border: solid $bw $bc;
+}
+
+
+// ==========================================
+* {
+  // border: solid 1px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Dosis', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: $color_bgc;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.wrap {
+  margin: 8% 40px;
+  height: 480px;
+}
+
+.none {
+  display: none;
+}
+
+h1 {
+  font-size: 34px;
+  text-align: center;
+}
+
+.lotteryMachine {
+  @include size(430px, 430px);
+  position: relative;
+  margin: auto;
+}
+
+.machineTop {
+  @include size(63%, 63%);
+  @include border(2px);
+  @include position(40%, 50%);
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.machineBottom {
+  @include size(53%, 23%);
+  @include position(79%, 50%);
+  background-color: #465881;
+  border-radius: 5px;
+  box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.3);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.ball {
+  @include size(17%, 17%);
+  @include border;
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+}
+
+.ball1 {
+  @include position(86%, 30%);
+  background-color: $color_ball1;
+}
+
+.ball2 {
+  @include position(86%, 50%);
+  background-color: $color_ball2;
+}
+
+.ball3 {
+  @include position(86%, 70%);
+  background-color: $color_ball3;
+}
+
+.ball4 {
+  @include position(86%, 40%);
+  background-color: $color_ball4;
+  z-index: 10;
+}
+
+.ball5 {
+  @include position(86%, 60%);
+  background-color: $color_ball5;
+
+  z-index: 10;
+}
+
+.ball6 {
+  @include position(79%, 80%);
+  background-color: $color_ball1;
+
+  z-index: 10;
+}
+
+.ball7 {
+  @include position(73%, 65%);
+  background-color: $color_ball2;
+}
+
+.ball8 {
+  @include position(73%, 50%);
+  background-color: $color_ball3;
+  z-index: 10;
+}
+
+.ball9 {
+  @include position(73%, 35%);
+  background-color: $color_ball4;
+  z-index: 10;
+}
+
+.ball10 {
+  @include position(79%, 20%);
+  background-color: $color_ball5;
+}
+
+.ball11 {
+  @include position(65%, 80%);
+  background-color: $color_ball5;
+}
+
+.ball12 {
+  @include position(60%, 40%);
+  background-color: $color_ball2;
+}
+
+.ball13 {
+  @include position(65%, 70%);
+  background-color: $color_ball3;
+}
+
+.ball14 {
+  @include position(64%, 89%);
+  background-color: $color_ball4;
+}
+
+.ball15 {
+  @include position(60%, 55%);
+  background-color: $color_ball5;
+}
+
+.ball16 {
+  @include position(63%, 25%);
+  background-color: $color_ball5;
+}
+
+.ball17 {
+  @include position(66%, 12%);
+  background-color: $color_ball2;
+}
+
+.spin {
+  @include size(50px, 50px);
+  @include position;
+  @include border(2px);
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.1s;
+
+  &:active {
+    transform-origin: center center;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    @include size(40px, 10px);
+    @include border(2px);
+    @include position;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  }
+}
+
+#numberWrapper {
+  height: 450px;
+  width: 400px;
+  overflow: auto;
+  text-align: left;
+
+  ul {
+    font-size: 24px;
+    margin-bottom: 25px;
+
+    li {
+      display: inline-block;
+      border-bottom: 1px solid #000;
+      width: 50px;
+      text-align: center;
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}

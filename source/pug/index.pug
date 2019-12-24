@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Lottery Number Generator
+    link(rel="stylesheet", href="css/style.css")
+    link(href="https://fonts.googleapis.com/css?family=Dosis:400,500,600&display=swap" rel="stylesheet") 
+    script(src="js/main.js")
+  body
+    .container
+      .wrap
+        h1 Lottery Number Generator
+        .lotteryMachine
+          .machineTop
+            .ball.ball1
+            .ball.ball2
+            .ball.ball3
+            .ball.ball4
+            .ball.ball5
+            .ball.ball6
+            .ball.ball7
+            .ball.ball8
+            .ball.ball9
+            .ball.ball10
+            .ball.ball11
+            .ball.ball12      
+            .ball.ball13
+            .ball.ball14
+            .ball.ball15
+            .ball.ball16
+            .ball.ball17
+          .machineBottom(onclick="createNumbers()")
+            .spin
+      .wrap(class="none" id="numberWrapper")
+    footer
+      p &copy; copyright 2019 by Jane Lin
+
