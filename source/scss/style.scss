@@ -44,7 +44,6 @@ body {
 .container {
   display: flex;
   justify-content: center;
-
 }
 
 .wrap {
@@ -117,14 +116,12 @@ h1 {
 .ball5 {
   @include position(86%, 60%);
   background-color: $color_ball5;
-
   z-index: 10;
 }
 
 .ball6 {
   @include position(79%, 80%);
   background-color: $color_ball1;
-
   z-index: 10;
 }
 
