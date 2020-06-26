@@ -14,15 +14,15 @@ function createNumbers() {
 
 
 function showNumbers(numbers) {
-  var numberWrapper = document.getElementById("numberWrapper")
+  var numberWrap = document.getElementById("numberWrap")
   var ul = document.createElement("ul")
-  numberWrapper.classList.remove("none")
+  numberWrap.classList.remove("none")
 
   for (var i = 0; i <= numbers.length - 1; i++) {
     var li = document.createElement("li")
     li.append(numbers[i])
     ul.appendChild(li)
-    numberWrapper.appendChild(ul)
+    numberWrap.appendChild(ul)
   }
 }
 
